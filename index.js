@@ -1,57 +1,49 @@
-//the map method executes a given function on every element in an array and returns a new array
-//it does not return a modified existing array, rather a new array gotten from a modified existing array
+//the filter method is like test on the items in array
+//for example in an array of numbers, if any item is > 2 return them and remove others
+
 
 //ex1
-const numbers = [1,2,3,4,5]
 
-const numbersDouble = numbers.map((value, index, arr) => {
-    return value * 2
+const numbers = [1,2,3,4,5,6]
+
+const evenNumbers = numbers.filter((number) => {
+    return number % 2 === 0
 })
 
-const multiplyIndex = numbers.map((value, index) => {
-    return value * index
-})
-
-
-console.log(numbersDouble)
-console.log(multiplyIndex)
-console.log(numbers)
-
+console.log(evenNumbers)
 
 //ex2
 
-const products = [
+const applicants = [
     {
-        name: 'dell',
-        price: 1000,
-        count: 5
-    }, 
+        name: 'Abass',
+        age: 28
+    },
     {
-        name: 'hp',
-        price: 2000,
-        count: 3
-    }, 
+        name: 'John',
+        age: 17
+    },
     {
-        name: 'apple',
-        price: 7500,
-        count: 2
-    }, 
+        name: 'Jerry',
+        age: 21
+    },
 ]
 
-const totalProductValues = products.map((items) => {
-    // return items.price * items.count
-    return {
-        name: items.name,
-        value: items.price * items.count
-    }
+const noUnderAge = applicants.filter((applicants) => {
+    return applicants.age > 18
 })
 
-console.log(totalProductValues)
+console.log(noUnderAge)
 
 
 //ex3
-const str = ['1', '2', '3', '4', '5']
+//removing duplicates
 
-const num = str.map(Number)
+const duplicatedNums = [1,2,3,2,3,4,2,1,4,5,6,3,2]
 
-console.log(str)
+const uniqueValue = duplicatedNums.filter((value, index, arr) => {
+    //indexOf(item) this returns the first occurrence of a value in a list
+    return arr.indexOf(value) === index
+})
+
+console.log(uniqueValue)

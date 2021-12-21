@@ -1,49 +1,54 @@
-//the filter method is like test on the items in array
-//for example in an array of numbers, if any item is > 2 return them and remove others
-
+//the reduce method executes a callback method on all the items of an array and returns one/single output value.
+//it takses in a callback function and initial value
+//the callback can take 4 params: the accumulator, value, index and array
+//the accumulator params keeps track of the value that'll be returned at the end
 
 //ex1
 
-const numbers = [1,2,3,4,5,6]
+const numbers = [1,2,3,4,5]
 
-const evenNumbers = numbers.filter((number) => {
-    return number % 2 === 0
-})
+const total = numbers.reduce((accumulator, value, index, arr) => {
+    return accumulator + value
+}, 0)
 
-console.log(evenNumbers)
+console.log(total)
 
 //ex2
+//returning max val in an array
+const listNum = [1,2,3,4,5,6,7]
 
-const applicants = [
+const maxValue = listNum.reduce((accumulator, value) => {
+    if (accumulator > value) {
+        return accumulator
+    }else{
+        return value
+    }
+}, -Infinity)
+
+console.log(maxValue)
+
+//ex3
+
+const store = [
     {
-        name: 'Abass',
-        age: 28
+        product: 'Toshiba',
+        value: 1000,
+        count: 15
     },
     {
-        name: 'John',
-        age: 17
+        product: 'Hp',
+        value: 3000,
+        count: 10
     },
     {
-        name: 'Jerry',
-        age: 21
+        product: 'Apple',
+        value: 15000,
+        count: 5
     },
 ]
 
-const noUnderAge = applicants.filter((applicants) => {
-    return applicants.age > 18
-})
+const totalStoreValue = store.reduce((acc, item) => {
+    return acc + (item.value * item.count)
+}, 0)
 
-console.log(noUnderAge)
-
-
-//ex3
-//removing duplicates
-
-const duplicatedNums = [1,2,3,2,3,4,2,1,4,5,6,3,2]
-
-const uniqueValue = duplicatedNums.filter((value, index, arr) => {
-    //indexOf(item) this returns the first occurrence of a value in a list
-    return arr.indexOf(value) === index
-})
-
-console.log(uniqueValue)
+console.log(totalStoreValue)

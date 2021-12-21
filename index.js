@@ -1,39 +1,18 @@
-//sort method sorts the array by manipulating the array
+//concat allows merging of two arrays into a new array to be returned
 
 //ex1
-const names = ['Rukayat', 'Abass', 'Mustapha', 'Richard', 'Martins', 'Joyce']
+const a = [1,2,3]
+const b = [3,4,5,6]
+const d = [7,8,9]
 
-names.sort()
+const c = a.concat(b, d)
 
-console.log(names)
+console.log(c)
 
 //ex2
-//to use sort on numbers you need to add a compareFunction callback
-const numbers = [82, 35, 269, 267, 5, 62, 83, 9]
+//using as push method
+const y = [1,2,3,4]
 
-//compare function => (a, b) => a - b
-numbers.sort((a, b) => a - b)
+const z = y.concat(5,6, a)
 
-console.log(numbers)
-
-//ex3
-const products = [
-    {
-        name: 'Dell',
-        price: 2500
-    },
-    {
-        name: 'Hp',
-        price: 3500
-    },
-    {
-        name: 'Apple',
-        price: 1000
-    },
-]
-
-products.sort((a, b) => {
-    return a.price - b.price
-})
-
-console.log(products)
+console.log(z)

@@ -1,8 +1,8 @@
-//the include methods makes it possible to know if an element is included in an array
+//the join method creates a new string by concating all the elements in the array
 
 //ex1
-const names = ['Abass', 'Adisa', 'Richard']
+const countries = ['Nigeria', 'Ghana', 'Niger']
 
-const result = names.includes('Abass')
+const res = countries.join()
 
-console.log(result)
+console.log(res)

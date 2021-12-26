@@ -1,8 +1,8 @@
-//the unshoft method adds one or more element at the beginning of the array and returns the new length of the array
+//the shift method removes the first element from an array and returns the modified array
 
 //ex1
-const numbers = [1,2,3,4,5]
+const numbers = [1,2,3,4]
 
-numbers.unshift(0)
+numbers.shift()
 
 console.log(numbers)

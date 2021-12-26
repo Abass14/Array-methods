@@ -1,8 +1,8 @@
-//the join method creates a new string by concating all the elements in the array
+//the reverse method is used to reverse an array
+//it modifies the existing array
 
-//ex1
-const countries = ['Nigeria', 'Ghana', 'Niger']
+const numbers = [1,2,3,4,5]
 
-const res = countries.join()
+numbers.reverse()
 
-console.log(res)
+console.log(numbers)

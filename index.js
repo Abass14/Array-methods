@@ -1,18 +1,24 @@
-//concat allows merging of two arrays into a new array to be returned
+//fill method changes all the items in an array with a provided value
+//modifies the existing array
 
 //ex1
-const a = [1,2,3]
-const b = [3,4,5,6]
-const d = [7,8,9]
+const numbers = [1,2,3,4,5]
 
-const c = a.concat(b, d)
+numbers.fill(0)
 
-console.log(c)
+console.log(numbers)
 
-//ex2
-//using as push method
-const y = [1,2,3,4]
+//start and end index can be specified => value, startIndex, endIndex
+const nums = [1,2,3,4,5,6]
 
-const z = y.concat(5,6, a)
+nums.fill(0, 1, 3)
 
-console.log(z)
+console.log(nums)
+
+//ex3
+
+const fillInNumbers = (n) => {
+    return Array(n).fill(0).map((_, index) => index + 1)
+}
+
+console.log(fillInNumbers(10))

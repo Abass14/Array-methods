@@ -1,20 +1,8 @@
-//the pop method removed the last item in an array and return the array
+//the unshoft method adds one or more element at the beginning of the array and returns the new length of the array
 
-// ex1
+//ex1
+const numbers = [1,2,3,4,5]
 
-const numbers = [1,2,3,4]
-
-numbers.pop()
+numbers.unshift(0)
 
 console.log(numbers)
-
-//ex2
-
-// when stored in a variable, it returns the value removed
-
-const nums = [1,2,3,4,5]
-
-const lastItem = nums.pop()
-
-console.log(lastItem)
-console.log(nums)

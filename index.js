@@ -29,8 +29,9 @@ const applicants = [
     },
 ]
 
+const age = 18
 const noUnderAge = applicants.filter((applicants) => {
-    return applicants.age > 18
+    return applicants.age > age
 })
 
 console.log(noUnderAge)

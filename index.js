@@ -1,20 +1,21 @@
-//Rest operator with functions: This is useful when passing an array of unknown values as parameter to a function
+//for loops with in and of
 
-//ex:
 
-function restOperation (message, ...colors) {
-    console.log(message)
+const colors = ['red', 'blue', 'orange']
+const alphabets = ['A', 'B', 'C']
 
-    for (let i = 0; i < colors.length; i++) {
-        const element = colors[i];
-        console.log(element)
-    }
+for (let i in colors) {
+    const element = colors[i];
+    console.log(element, "in")    
 }
 
-const message = "This is how rest operator works in functions"
+for(let i of colors) {
+    console.log(i, "of")
+}
 
-restOperation(message, 'blue')
-restOperation(message, 'blue', 'red')
-restOperation(message, 'blue', 'red', 'green')
-
+let count = 0
+for(let letter of alphabets){
+    count++
+    console.log(letter, `${count}`)
+}
 

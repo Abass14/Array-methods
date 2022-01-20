@@ -1,50 +1,76 @@
-//the filter method is like test on the items in array
-//for example in an array of numbers, if any item is > 2 return them and remove others
+//Array/Object destructuring and spread operator
+
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+const numbers = ['1', '2', '3', '4', '5', '6']
+
+//destructuring alphabet by direct item positions
+
+const [a, b, c] = alphabet
+
+console.log(a)
+console.log(b)
+
+//destructuring alphabet by skipping item positions
+const [x,,,y] = alphabet
+
+console.log(x)
+console.log(y)
+
+//destructuring alphabet by skipping item positions and getting the rest of the items in the array
+
+const [i,,,j, ...rest] = alphabet
+console.log(rest)
+
+//joining two arrays with the spread operator
+const joinArray = [...alphabet, ...numbers]
+console.log(joinArray)
+
+//useing array destructuring for functions with return value
+
+function sumAndMutiply (a, b) {
+    return [a+b, a*b, a/b]
+}
+
+const [sum, mult, div = "no division"] = sumAndMutiply(2, 3)
+
+console.log(sum)
+console.log(mult)
+console.log(div)
 
 
-//ex1
+//OBJECTS
+const personOne = {
+    name: 'Abass',
+    age: 20,
+    address: {
+        city: 'somewhere',
+        state: 'Lagos'
+    }
+}
 
-const numbers = [1,2,3,4,5,6]
+const personTwo = {
+    address: {
+        city: 'another place',
+        state: 'Ogun'
+    }
+}
 
-const evenNumbers = numbers.filter((number) => {
-    return number % 2 === 0
-})
+//destructuring personOne
+const newPerson = {...personOne, name: 'segun'}
 
-console.log(evenNumbers)
+console.log(newPerson)
+const { name: newName, age, address: { city } } = personOne
 
-//ex2
+console.log(age)
+console.log(newName)
+console.log(city)
 
-const applicants = [
-    {
-        name: 'Abass',
-        age: 28
-    },
-    {
-        name: 'John',
-        age: 17
-    },
-    {
-        name: 'Jerry',
-        age: 21
-    },
-]
+//joining two similar (with exact/some same properties) objects with spread operator, 
+//the second object similar property will override the initial object dame property
 
-const age = 18
-const noUnderAge = applicants.filter((applicants) => {
-    return applicants.age > age
-})
+const joinedObject = {...personOne, ...personTwo} //address will be overriden in personOne by the one in personTwo
 
-console.log(noUnderAge)
+console.log(joinedObject)
 
 
-//ex3
-//removing duplicates
-
-const duplicatedNums = [1,2,3,2,3,4,2,1,4,5,6,3,2]
-
-const uniqueValue = duplicatedNums.filter((value, index, arr) => {
-    //indexOf(item) this returns the first occurrence of a value in a list
-    return arr.indexOf(value) === index
-})
-
-console.log(uniqueValue)

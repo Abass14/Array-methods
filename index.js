@@ -1,76 +1,20 @@
-//Array/Object destructuring and spread operator
+//Rest operator with functions: This is useful when passing an array of unknown values as parameter to a function
 
-const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+//ex:
 
-const numbers = ['1', '2', '3', '4', '5', '6']
+function restOperation (message, ...colors) {
+    console.log(message)
 
-//destructuring alphabet by direct item positions
-
-const [a, b, c] = alphabet
-
-console.log(a)
-console.log(b)
-
-//destructuring alphabet by skipping item positions
-const [x,,,y] = alphabet
-
-console.log(x)
-console.log(y)
-
-//destructuring alphabet by skipping item positions and getting the rest of the items in the array
-
-const [i,,,j, ...rest] = alphabet
-console.log(rest)
-
-//joining two arrays with the spread operator
-const joinArray = [...alphabet, ...numbers]
-console.log(joinArray)
-
-//useing array destructuring for functions with return value
-
-function sumAndMutiply (a, b) {
-    return [a+b, a*b, a/b]
-}
-
-const [sum, mult, div = "no division"] = sumAndMutiply(2, 3)
-
-console.log(sum)
-console.log(mult)
-console.log(div)
-
-
-//OBJECTS
-const personOne = {
-    name: 'Abass',
-    age: 20,
-    address: {
-        city: 'somewhere',
-        state: 'Lagos'
+    for (let i = 0; i < colors.length; i++) {
+        const element = colors[i];
+        console.log(element)
     }
 }
 
-const personTwo = {
-    address: {
-        city: 'another place',
-        state: 'Ogun'
-    }
-}
+const message = "This is how rest operator works in functions"
 
-//destructuring personOne
-const newPerson = {...personOne, name: 'segun'}
-
-console.log(newPerson)
-const { name: newName, age, address: { city } } = personOne
-
-console.log(age)
-console.log(newName)
-console.log(city)
-
-//joining two similar (with exact/some same properties) objects with spread operator, 
-//the second object similar property will override the initial object dame property
-
-const joinedObject = {...personOne, ...personTwo} //address will be overriden in personOne by the one in personTwo
-
-console.log(joinedObject)
+restOperation(message, 'blue')
+restOperation(message, 'blue', 'red')
+restOperation(message, 'blue', 'red', 'green')
 
 

@@ -73,4 +73,30 @@ const joinedObject = {...personOne, ...personTwo} //address will be overriden in
 
 console.log(joinedObject)
 
+const obj = {
+    names: "abass",
+    age: 14
+}
+
+obj.newNames = obj.names
+delete obj.names
+
+
+
+// console.log(obj, "object")
+
+
+const newObj = {...obj, newNames: "new"}
+
+console.log(newObj, "new obj")
+
+// var array=[{'a':'man', 'age':'35'},{'b':'woman', 'age':'30'}];
+// var newArray = array.map(function(item){
+//    return {
+//      age: item.age,
+//      gender: item.a || item.b
+//    };
+// });
+// console.log(newArray, "new array");
+
 
